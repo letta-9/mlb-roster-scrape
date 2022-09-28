@@ -42,32 +42,3 @@ players_df = players_df.str.replace('[^\w\s]','')
 players_df = players_df.str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
 
 players_df.to_csv('mlb_list.csv', index=False)
-
-# page = requests.get('https://www.mlb.com/prospects')
-# souped = Soup(page.content, "html.parser")
-# imgs = souped.find_all("img", {"class": "headshot-img headshot-img--xs"})
-
-# img_link_list = []
-
-# for img in imgs:
-#     imgLink = img.attrs.get('src')
-#     img_link_list += [imgLink]
-
-# print(img_link_list)
-
-
-
-
-# names = souped.find_all("div", {"class": "prospect-headshot__name"})
-
-# for name in names:
-#     name = name.text.strip()
-
-# print(name)
-
-
-
-# <img class="headshot-img headshot-img--xs" src="https://img.mlbstatic.com/mlb-photos/image/upload/v1/people/691016/headshot/silo/current" alt="Photo headshot of Tyler Soderstrom" data-testid="player-headshot" srcset="https://img.mlbstatic.com/mlb-photos/image/upload/v1/people/691016/headshot/silo/current, https://img.mlbstatic.com/mlb-photos/image/upload/v1/people/691016/headshot/silo/current 2x, https://img.mlbstatic.com/mlb-photos/image/upload/v1/people/691016/headshot/silo/current 3x" onerror="this.onerror=null;this.src='https://content.mlb.com/images/headshots/current/168x168/generic.png';this.srcset='https://content.mlb.com/images/headshots/current/168x168/generic.png';">
-
-# for li in souped.select('img:-soup-contains("2021") + ul li'):
-#     print(li.text)
